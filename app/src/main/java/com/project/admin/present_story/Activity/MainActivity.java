@@ -2,6 +2,7 @@ package com.project.admin.present_story.Activity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.design.widget.TabLayout;
@@ -10,7 +11,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 
 import com.project.admin.present_story.Adapter.MainViewPagerAdapter;
@@ -20,11 +20,16 @@ import com.project.admin.present_story.R;
 
 public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
+    String targetStory;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        targetStory = getPref("targetStory");
+
+        toolbar = findViewById(R.id.mainactivity_toolbar);
 
         setToolbar();
         setTabs();
@@ -32,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setToolbar() {
-        Toolbar toolbar = findViewById(R.id.mainactivity_toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false); //액션바에 표시되는 제목의 표시유무를 설정
@@ -43,10 +47,11 @@ public class MainActivity extends AppCompatActivity {
     private void setTabs() {
         final int[] icons = {R.drawable.calendar_text, R.drawable.view_grid};
         final String[] titles = {"캘린더", "더보기"};
+//        final String[] titles = {"리스트","집안일", "외출", "캘린더", "더보기"};
         final Fragment[] fragments = {new CalendarFragment(), new AdditionFragment()};
 
-        TabLayout tabs = findViewById(R.id.mainactivity_tablayout);
-        viewPager = findViewById(R.id.mainactivity_viewpager);
+        TabLayout tabs = findViewById(R.id.mainActivity_tabLayout);
+        viewPager = findViewById(R.id.mainActivity_viewpager);
 
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -86,8 +91,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ActivityOptions activityOptions = ActivityOptions.makeCustomAnimation(v.getContext(), R.anim.from_right, R.anim.to_left);
-                startActivity(new Intent(MainActivity.this, PeopleActivity.class), activityOptions.toBundle());
+                Intent intent = new Intent(MainActivity.this, MessageActivity.class);
+                startActivity(intent, activityOptions.toBundle());
             }
         });
+    }
+
+    String getPref(String key) {
+        SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
+        return pref.getString(key, "");
+    }
+
+    public void hideToolbar(boolean isHide) {
+        if(!isHide) {
+            toolbar.setVisibility(View.GONE);
+        } else {
+            toolbar.setVisibility(View.VISIBLE);
+        }
     }
 }

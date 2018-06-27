@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- START xml_defaults -->
+<defaultsMap>
+    <entry>
+        <key>splash_background</key>
+        <value>#FFFFFF</value>
+    </entry>
+    <entry>
+        <key>enable_server</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>splash_message</key>
+        <value>Welcome to Present-Story!</value>
+    </entry>
+</defaultsMap>
+    <!-- END xml_defaults -->

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="60dp"
+    android:orientation="vertical"
+    tools:context=".Activity.CheckStoryActivity">
+
+    <!-- TODO : 로고 이미지 설정-->
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/explain_add" />
+
+    <TextView
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Code : " />
+    <TextView
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:id="@+id/checkStoryActivity_textview_uid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="code" />
+    <Button
+        android:id="@+id/checkStoryActivity_button_clipboard"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="코드 복사"/>
+
+    <Button
+        android:id="@+id/checkStoryActivity_button_createStory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Story 만들기"
+        android:textAllCaps="false" />
+
+
+</LinearLayout>

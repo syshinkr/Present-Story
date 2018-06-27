@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="16dp"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/addscheduleFragment_et_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="내용" />
+
+    <EditText
+        android:id="@+id/addscheduleFragment_et_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addscheduleFragment_et_content"
+        android:hint="상세 설명" />
+
+    <TextView
+        android:id="@+id/addscheduleFragment_tv_sd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addscheduleFragment_et_detail"
+        android:layout_margin="16dp"
+        android:text="시작일"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/addscheduleFragment_btn_sd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/addscheduleFragment_tv_sd"
+        android:layout_toRightOf="@+id/addscheduleFragment_tv_sd"
+        android:text="9999-99-99" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/addscheduleFragment_btn_st"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/addscheduleFragment_tv_sd"
+        android:layout_toRightOf="@id/addscheduleFragment_btn_sd"
+        android:text="AM 99:99" />
+
+    <TextView
+        android:id="@+id/addscheduleFragment_tv_ed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addscheduleFragment_tv_sd"
+        android:layout_margin="16dp"
+        android:text="종료일"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/addscheduleFragment_btn_ed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/addscheduleFragment_tv_ed"
+        android:layout_toRightOf="@+id/addscheduleFragment_tv_ed"
+        android:text="9999-99-99" />
+
+    <Button
+        android:id="@+id/addscheduleFragment_btn_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/addscheduleFragment_tv_ed"
+        android:layout_toRightOf="@id/addscheduleFragment_btn_sd"
+        android:text="AM 99:99" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/addscheduleFragment_btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="취소" />
+
+        <Button
+            android:id="@+id/addscheduleFragment_btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="추가" />
+    </LinearLayout>
+</RelativeLayout>

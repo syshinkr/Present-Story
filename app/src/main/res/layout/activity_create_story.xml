@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_margin="16dp"
+    android:layout_height="match_parent"
+    tools:context=".Activity.CreateStoryActivity">
+
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:text="Story 명"
+        android:layout_height="wrap_content" />
+    
+    <EditText
+        android:id="@+id/createStoryActivity_edittext_storyName"
+        android:hint="스토리명을 입력하세요"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:text="Code 추가"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/createStoryActivity_edittext_uid"
+            android:hint="함께할 유저들의 코드를 입력하세요"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/createStoryActivity_btn_add"
+            android:text="추가"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/createStoryActivity_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/createStoryActivity_btn_create"
+        android:text="Story 생성"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>
